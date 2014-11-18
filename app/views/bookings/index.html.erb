@@ -1,0 +1,35 @@
+<h1>Listing bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Restaurant</th>
+      <th>Date</th>
+      <th>Num person</th>
+      <th>Discount</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.time %></td>
+        <td><%= booking.restaurant %></td>
+        <td><%= booking.date %></td>
+        <td><%= booking.num_person %></td>
+        <td><%= booking.discount %></td>
+        <td><%= booking.user %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
