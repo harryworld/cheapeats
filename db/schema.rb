@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20141118093928) do
 
   create_table "discounts", force: true do |t|
-    t.integer  "restaurant_id_id"
+    t.integer  "restaurant_id"
     t.time     "start_time"
     t.integer  "amount"
     t.datetime "created_at"
