@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant_id: 1
+  start_time: 2014-11-18 17:39:28
+  amount: 1
+
+two:
+  restaurant_id: 1
+  start_time: 2014-11-18 17:39:28
+  amount: 1
