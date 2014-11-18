@@ -1,3 +1,26 @@
 <H1>
 HELLO THIS IS THE HOME#INDEX.HTML
 </H1>
+
+<% @restaurants.each do |restaurant| %>
+  <tr class="table-row" data-restaurant-id="<%= restaurant.id %>">
+    <td class="plus-icon"><span class="fa fa-plus"></span></td>
+    <% if restaurant.brand == "Pure Fitness" %>
+      <td class="success brand">
+    <% elsif restaurant.brand == "Fitness First" %>
+      <td class="danger brand">
+    <% elsif restaurant.brand == "California Fitness" %>
+      <td class="warning brand">
+    <% elsif restaurant.brand == "Physical Fitness" %>
+      <td class="info brand">
+    <% end %>
+      <%= restaurant.brand %>
+      </td>
+    <td><%= restaurant.district %></td>
+    <td><%= restaurant.territory %></td>
+    <td><%= restaurant.branch %></td>
+    <td><%= restaurant.address %></td>
+    <td><%= restaurant.telephone %></td>
+    <td><%= restaurant.cardio %></td>
+  </tr>
+<% end %>

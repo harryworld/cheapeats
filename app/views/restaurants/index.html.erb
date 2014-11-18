@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:cuisine) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:district) %></th>
       <th><%= model_class.human_attribute_name(:phone) %></th>
       <th><%= model_class.human_attribute_name(:lat) %></th>
       <th><%= model_class.human_attribute_name(:long) %></th>
@@ -29,6 +30,7 @@
         <td><%= restaurant.name %></td>
         <td><%= restaurant.cuisine %></td>
         <td><%= restaurant.address %></td>
+        <td><%= restaurant.district %></td>
         <td><%= restaurant.phone %></td>
         <td><%= restaurant.lat %></td>
         <td><%= restaurant.long %></td>
@@ -42,6 +44,8 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_restaurant_path(restaurant), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      restaurant_path(restaurant), :class => 'btn btn-success btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       restaurant_path(restaurant),
                       :method => :delete,

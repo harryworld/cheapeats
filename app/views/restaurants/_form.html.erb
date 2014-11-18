@@ -37,6 +37,13 @@
     <%= error_span(@restaurant[:address]) %>
   </div>
   <div class="control-group">
+    <%= f.label :district, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :district, :class => 'form-control' %>
+    </div>
+    <%= error_span(@restaurant[:district]) %>
+  </div>
+  <div class="control-group">
     <%= f.label :phone, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :phone, :class => 'form-control' %>

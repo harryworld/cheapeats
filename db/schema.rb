@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20141118081833) do
     t.string   "name"
     t.string   "cuisine"
     t.string   "address"
+    t.string   "district"
     t.string   "phone"
     t.float    "lat"
     t.float    "long"
