@@ -1,5 +1,7 @@
 <%= simple_form_for @restaurant, :html => { :class => "form-horizontal restaurant" } do |f| %>
 
+  <%= f.error_notification %>
+
   <%= f.input :name %>
   <%= f.input :cuisine %>
   <%= f.input :address %>
@@ -17,6 +19,7 @@
   <%= f.input :img_url3 %>
 
   <br />
+  <%= f.error :base %>
   <%= f.button :submit, :class => 'btn btn-primary' %>
 
 <% end %>

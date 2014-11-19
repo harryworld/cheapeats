@@ -1,10 +1,13 @@
 <%= simple_form_for @discount, :html => { :class => "form-horizontal discount" } do |f| %>
 
+  <%= f.error_notification %>
+
   <%= f.association :restaurant %>
   <%= f.input :start_time %>
   <%= f.input :amount %>
 
   <br />
+  <%= f.error :base %>
   <%= f.button :submit, :class => 'btn btn-primary' %>
 
 <% end %>
