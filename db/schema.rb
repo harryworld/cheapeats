@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20141118102322) do
     t.string   "district"
     t.string   "phone"
     t.float    "lat"
-    t.float    "long"
+    t.float    "lng"
     t.text     "description"
     t.string   "rating"
     t.string   "price_range"
