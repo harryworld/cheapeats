@@ -3,8 +3,8 @@
   <%= f.association :restaurant %>
   <%= f.input :date %>
   <%= f.input :num_person, in: 1..20 %>
-  <%= f.input :discount_id %>
-  <%= f.input :user_id %>
+  <%= f.input :discount_id, label: "Discount Id", hint: "this is a test hint" %>
+  <%= f.input :user_id, label: "User Id" %>
   <br />
   <%= f.button :submit, :class => 'btn btn-primary' %>
 

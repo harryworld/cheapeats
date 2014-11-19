@@ -8,8 +8,10 @@
   <%= f.input :lat %>
   <%= f.input :lng %>
   <%= f.input :description %>
-  <%= f.input :rating %>
-  <%= f.input :price_range %>
+  <div class = "container">
+    <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
+    <%= f.input :price_range, collection: 1..5, as: :radio_buttons %>
+  </div>
   <%= f.input :img_url1 %>
   <%= f.input :img_url2 %>
   <%= f.input :img_url3 %>
