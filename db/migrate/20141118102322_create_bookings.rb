@@ -1,7 +1,6 @@
 class CreateBookings < ActiveRecord::Migration
   def change
     create_table :bookings do |t|
-      t.time :time
       t.references :restaurant, index: true
       t.date :date
       t.integer :num_person
