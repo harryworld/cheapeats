@@ -35,3 +35,10 @@ Restaurant.create(
   rating: 1,
   price_range: 2
 )
+
+User.create(
+)
+
+Bookings.create(
+
+)
