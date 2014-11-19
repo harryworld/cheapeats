@@ -67,11 +67,11 @@ Discount.create restaurant_id: 6, start_time: "16:30", amount: 26
 Discount.create restaurant_id: 6, start_time: "17:00", amount: 16
 Discount.create restaurant_id: 6, start_time: "17:30", amount: 06
 
-Booking.create restaurant_id: 1, discount_id: 1, date: "2014-11-12", num_person: 1
-Booking.create restaurant_id: 1, discount_id: 6, date: "2014-11-13", num_person: 2
+Booking.create restaurant_id: 1, user_id: 1, discount_id: 1, date: "2014-11-12", num_person: 1
+Booking.create restaurant_id: 1, user_id: 1, discount_id: 6, date: "2014-11-13", num_person: 2
 
-Booking.create restaurant_id: 2, discount_id: 9, date: "2014-11-14", num_person: 2
-Booking.create restaurant_id: 2, discount_id: 13, date: "2014-11-15", num_person: 6
+Booking.create restaurant_id: 2, user_id: 2, discount_id: 9, date: "2014-11-14", num_person: 2
+Booking.create restaurant_id: 2, user_id: 2, discount_id: 13, date: "2014-11-15", num_person: 6
 
 Booking.create restaurant_id: 3, user_id: 3, discount_id: 26, date: "2014-11-23", num_person: 3
 
