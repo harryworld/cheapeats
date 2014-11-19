@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:time) %></th>
       <th><%= model_class.human_attribute_name(:restaurant_id) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:num_person) %></th>
@@ -20,7 +19,6 @@
     <% @bookings.each do |booking| %>
       <tr>
         <td><%= link_to booking.id, booking_path(booking) %></td>
-        <td><%= booking.time %></td>
         <td><%= booking.restaurant_id %></td>
         <td><%= booking.date %></td>
         <td><%= booking.num_person %></td>

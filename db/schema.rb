@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20141118102322) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: true do |t|
-    t.time     "time"
     t.integer  "restaurant_id"
     t.date     "date"
     t.integer  "num_person"
