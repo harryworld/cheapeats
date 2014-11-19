@@ -39,22 +39,45 @@
   <body>
 
     <div class="navbar navbar-default navbar-static-top">
+
       <div class="container-fluid">
+
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-       <%= link_to "Cheap Eats", root_path, :class => "navbar-brand" %>
+
+        <%= link_to "Cheap Eats", root_path, :class => "navbar-brand" %>
+
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to "Log Out",  destroy_user_session_path, :method => :delete,  class: "navbar-right top-button" %></li>
+            <% else %>
+              <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-right top-button signup" %></li>
+              <li><%= link_to "Log In",  new_user_session_path,      class: "navbar-right top-button" %></li>
+            <% end %>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+
           </ul>
+
         </div>
+
       </div>
+
     </div>
+
 
     <div class="container-fluid">
       <div class="row">
