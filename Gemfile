@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # twitter bootstrap rails
 gem "twitter-bootstrap-rails"
 
+gem 'rails_12factor', group: :production
+
 group :development do
   # Spring speeds up development by keeping your application running in the background.
   #> https://github.com/rails/spring
