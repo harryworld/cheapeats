@@ -1,30 +1,11 @@
 <%= simple_form_for @booking, :html => { :class => "form-horizontal booking" } do |f| %>
 
-    <% if @booking.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @booking.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
-  <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+  <%= f.association :restaurant %>
   <%= f.input :date %>
   <%= f.input :num_person, in: 1..20 %>
   <%= f.input :discount_id %>
   <%= f.input :user_id %>
-
-
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            bookings_path, :class => 'btn btn-default' %>
+  <br />
+  <%= f.button :submit, :class => 'btn btn-primary' %>
 
 <% end %>

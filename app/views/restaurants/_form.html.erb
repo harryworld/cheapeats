@@ -1,20 +1,5 @@
 <%= simple_form_for @restaurant, :html => { :class => "form-horizontal restaurant" } do |f| %>
 
-    <% if @restaurant.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @restaurant.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
   <%= f.input :name %>
   <%= f.input :cuisine %>
   <%= f.input :address %>
@@ -29,9 +14,7 @@
   <%= f.input :img_url2 %>
   <%= f.input :img_url3 %>
 
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            restaurants_path, :class => 'btn btn-default' %>
+  <br />
+  <%= f.button :submit, :class => 'btn btn-primary' %>
 
 <% end %>
