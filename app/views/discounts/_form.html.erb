@@ -1,4 +1,4 @@
-<%= form_for @discount, :html => { :class => "form-horizontal discount" } do |f| %>
+<%= simple_form_for @discount, :html => { :class => "form-horizontal discount" } do |f| %>
 
     <% if @discount.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -15,28 +15,9 @@
     </div>
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :restaurant_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
-    </div>
-    <%= error_span(@discount[:restaurant_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :start_time, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :start_time, :class => 'form-control' %>
-    </div>
-    <%= error_span(@discount[:start_time]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :amount, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :amount, :class => 'form-control' %>
-    </div>
-    <%= error_span(@discount[:amount]) %>
-  </div>
-
+  <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+  <%= f.input :start_time %>
+  <%= f.input :amount %>
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
