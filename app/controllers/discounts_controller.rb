@@ -19,6 +19,7 @@ class DiscountsController < ApplicationController
 
   # GET /discounts/1/edit
   def edit
+    @names = Restaurant.all.pluck(:name)
   end
 
   # POST /discounts
