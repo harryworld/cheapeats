@@ -1,59 +1,20 @@
-<%= form_for @booking, :html => { :class => "form-horizontal booking" } do |f| %>
+<%= simple_form_for @booking, :html => { :class => "form-horizontal booking" } do |f| %>
 
-    <% if @booking.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @booking.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
+  <%= f.error_notification %>
 
-  <div class="control-group">
-    <%= f.label :restaurant_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
-    </div>
-    <%= error_span(@booking[:restaurant_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :date, :class => 'form-control' %>
-    </div>
-    <%= error_span(@booking[:date]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :num_person, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :num_person, in: 1..20, :class => 'form-control' %>
-    </div>
-    <%= error_span(@booking[:num_person]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :discount_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :discount_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@booking[:discount_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :user_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@booking[:user_id]) %>
-  </div>
+  <%= f.association :restaurant %>
+  <%= f.input :date %>
+  <%= f.input :num_person, in: 1..20 %>
+  <%= f.label :discount_id %>
+  <%= f.collection_select :discount_id, Discount.all, :id, :amount, hint: "this is a test hint" %>
+  <p></p>
+  <%= f.association :discount, member: Discount.all %>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, User.all, :id, :name %>
 
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            bookings_path, :class => 'btn btn-default' %>
+  <br />
+  <br />
+  <%= f.error :base %>
+  <%= f.button :submit, :class => 'btn btn-primary' %>
 
 <% end %>

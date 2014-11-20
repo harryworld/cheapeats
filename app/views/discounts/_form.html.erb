@@ -1,45 +1,13 @@
-<%= form_for @discount, :html => { :class => "form-horizontal discount" } do |f| %>
+<%= simple_form_for @discount, :html => { :class => "form-horizontal discount" } do |f| %>
 
-    <% if @discount.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@discount.errors.count, "error") %> prohibited this discount from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @discount.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
+  <%= f.error_notification %>
 
-  <div class="control-group">
-    <%= f.label :restaurant_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
-    </div>
-    <%= error_span(@discount[:restaurant_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :start_time, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :start_time, :class => 'form-control' %>
-    </div>
-    <%= error_span(@discount[:start_time]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :amount, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :amount, :class => 'form-control' %>
-    </div>
-    <%= error_span(@discount[:amount]) %>
-  </div>
+  <%= f.association :restaurant %>
+  <%= f.input :start_time %>
+  <%= f.input :amount %>
 
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            discounts_path, :class => 'btn btn-default' %>
+  <br />
+  <%= f.error :base %>
+  <%= f.button :submit, :class => 'btn btn-primary' %>
 
 <% end %>
