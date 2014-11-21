@@ -22,6 +22,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'rails_12factor', group: :production
 
+gem 'angularjs-rails', '~> 1.3'
+
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
