@@ -34,7 +34,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application" %>
   </head>
   <body>
 
@@ -87,11 +86,8 @@
     </div>
 
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
         <!-- <div class="col-lg-3">
           <div class="well sidebar-nav">
             <h3>Sidebar</h3>
@@ -102,8 +98,6 @@
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
           </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
 
       <footer>
         <p>&copy; Company 2014</p>
@@ -111,5 +105,7 @@
 
     </div> <!-- /container -->
 
+
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -1,19 +1,10 @@
-<div class="row">
+<div class="row text-center">
+  <h5>
+    Eat at: <location>
 
-  <div class="col-sm-6 text-center">
-    Pick a time <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <div class="btn-group" data-toggle="buttons">
-     <label class="btn btn-success active">
-       <input type="radio" name="options" id="option1" autocomplete="off" checked> 3:00pm
-     </label>
-     <label class="btn btn-success">
-       <input type="radio" name="options" id="option2" autocomplete="off"> 3:30pm
-     </label>
-     <label class="btn btn-success">
-       <input type="radio" name="options" id="option3" autocomplete="off"> 4:00pm
-     </label>
-    </div>
-  </div>
+    or <button type="button" class="">Search nearby <i class="fa fa-map-marker"></i></button>
+  </h5>
+
 </div>
 <br \>
 <div class="row">
@@ -23,49 +14,66 @@
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Soho Spice <span class="pull-right">Cuisine: Thais</span>
+            Soho Spice <span class="pull-right">Cuisine: Thai</span>
           </a>
         </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
-          <div>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="thumbnail">
+                <img src="/assets/dog1.jpg" alt="" class="img-responsive">
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="thumbnail">
+                <img src="/assets/dog2.jpg" alt="" class="img-responsive">
+              </div>
+            </div>
           </div>
-          <div>
-            <img class="img-responsive pull-right" src="/assets/cockatiel.jpg">
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="pull-right">5 star rating</span>
+              Central, 2345 Hollywood Road
+            </div>
+          </div>
+          <div class="row">
+
+              <div class="control-group col-xs-12">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+              </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="pull-left text-center">
+                <h5>Choose a time:</h5>
+                <div class="btn-group" data-toggle="buttons">
+                 <label class="btn btn-success active">
+                   <input type="radio" name="options" id="option1" autocomplete="off" checked> 3:30pm
+                 </label>
+                 <label class="btn btn-success">
+                   <input type="radio" name="options" id="option2" autocomplete="off"> 4pm
+                 </label>
+                 <label class="btn btn-success">
+                   <input type="radio" name="options" id="option3" autocomplete="off"> 4:30pm
+                 </label>
+                </div>
+              </div>
+              <div class="pull-right text-center">
+                <h5>50% discount</h5>
+                <button type="button" class="btn btn-danger">
+                  Book now <i class="fa fa-chevron-circle-right"></i>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingTwo">
-        <h4 class="panel-title">
-          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            K-roll <span class="pull-right">Cuisine: Korean</span>
-          </a>
-        </h4>
-      </div>
-      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-        <div class="panel-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
-        <h4 class="panel-title">
-          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Sam's Pizza <span class="pull-right">Cuisine: Italian</span>
-          </a>
-        </h4>
-      </div>
-      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-        <div class="panel-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-        </div>
-      </div>
-    </div>
+
   </div>
 
 </div>
