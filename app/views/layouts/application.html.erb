@@ -75,7 +75,8 @@
                   </li>
                 <% else %>
                   <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-right top-button signup" %></li>
-                  <li><%= link_to "Log In",  new_user_session_path,      class: "navbar-right top-button" %></li>
+                  <li><%= link_to "Log In",  new_user_session_path, class: "navbar-right top-button" %></li>
+                  <li><%= link_to "Facebok Sign in",  user_omniauth_authorize_path(:facebook), class: "navbar-right top-button" %></li>
                 <% end %>
               </ul>
             </div><!--/.nav-collapse -->
